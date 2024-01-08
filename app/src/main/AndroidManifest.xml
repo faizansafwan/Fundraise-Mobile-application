@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CharityHand"
+        tools:targetApi="31">
+        <activity
+            android:name=".LocationDistance"
+            android:exported="false" />
+        <activity
+            android:name=".Contact"
+            android:exported="false"
+            android:parentActivityName=".OurLocation"
+            android:label="Contact Details" />
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAXJ5x_B3qSpa7Xxzb08Z0xLsQmPw-0lcM" />
+
+        <activity
+            android:name=".OurGpsLocation"
+            android:exported="false"
+            android:label= "@string/title_activity_our_gps_location" />
+        <activity
+            android:name=".OurProject"
+            android:exported="false"
+            android:label="Our Project"
+            android:parentActivityName=".Dashboard" />
+        <activity
+            android:name=".WellWishers"
+            android:exported="false"
+            android:label="Well-Wishers"
+            android:parentActivityName=".Dashboard" />
+        <activity
+            android:name=".OurLocation"
+            android:exported="false"
+            android:label="Our Location"
+            android:parentActivityName=".Dashboard" />
+        <activity
+            android:name=".CreditCardDonation"
+            android:exported="false"
+            android:label="Credit Card Payment"
+            android:parentActivityName=".Donation" />
+        <activity
+            android:name=".BankDonation"
+            android:exported="false"
+            android:label="Bank Payment"
+            android:parentActivityName=".Donation" />
+        <activity
+            android:name=".Donation"
+            android:exported="false"
+            android:label="Donation"
+            android:parentActivityName=".Dashboard" />
+        <activity
+            android:name=".Dashboard"
+            android:exported="false"
+            android:label="Dashboard"
+            android:screenOrientation="sensor" />
+        <activity
+            android:name=".Signup"
+            android:exported="false"
+            android:parentActivityName=".Login"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Login"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Theme"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
